@@ -1,0 +1,33 @@
+# default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+allison -v2.0.3
+
+# group :test do
+#   autotest -v4.2.9
+#   autotest-fsevent -v0.2.2
+#   autotest-growl -v0.2.3
+#   autotest-rails -v4.1.0
+# end
+# capistrano -v2.5.18
+# capistrano_rsync_with_remote_cache -v2.3.8
+
+configuration
+diff-lcs
+gemcutter
+haml
+hammertime
+heroku
+hirb
+hydra
+launchy
+quietbacktrace
+rake
+rcov
+rdiscount
+rdoc
+RedCloth
+ruby-debug
+ruby-debug-ide
+ruby-prof
+sqlite3-ruby
+timecop
+ZenTest

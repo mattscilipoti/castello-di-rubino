@@ -1,0 +1,9 @@
+--- 
+:bulk_threshold: 1000
+:benchmark: false
+gem: --no-ri --run-tests
+:update_sources: true
+gemcutter_key: e8303f5de9326620f085e788d2d1a998
+:verbose: true
+:backtrace: false
+rdoc: -f hanna

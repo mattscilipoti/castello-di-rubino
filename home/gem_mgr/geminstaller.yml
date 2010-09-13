@@ -1,0 +1,17 @@
+gems:
+- name: thor
+- name: boson
+- name: cheat
+- name: hammertime
+- name: jeweler
+- name: progressbar
+#testing
+- name: capybara
+- name: micronaut
+#irb
+- name: bond
+- name: console_update
+- name: duration
+- name: every
+- name: hirb
+- name: matthew-method_lister

@@ -1,0 +1,25 @@
+#path for gems
+PATH=~/.gem/ruby/1.8/bin:$PATH
+
+#for jeweller gem
+export JEWELLER_OPTS="--gemcutter"
+
+#debugging
+alias rd='rdebug --no-stop'
+
+#hanna (rdoc): http://github.com/mislav/hanna
+export RDOCOPT="-f hanna"
+
+#rspec progressbar
+# see: http://ekenosen.net/nick/devblog/2008/12/better-progress-bar-for-rspec/
+alias sspb='script/spec --require ~/lib/rspec/compact_progress_bar_formatter.rb --format Spec::Runner::Formatter::CompactProgressBarFormatter --color'
+alias  spb='spec        --require ~/lib/rspec/compact_progress_bar_formatter.rb --format Spec::Runner::Formatter::CompactProgressBarFormatter --color'
+
+#testing
+alias raket='RAILS_ENV=test rake'
+
+##rvm
+alias ..-='cd .. && cd -' #useful for triggering .rvmrc
+
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+#PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
