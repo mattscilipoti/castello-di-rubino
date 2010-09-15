@@ -1,19 +1,26 @@
 require 'rubygems'
 require 'wirble'
-require 'hirb'
 
 Wirble.init
 Wirble.colorize
 
-#Hirb::View.enable
+
 
 puts "`include RailsHelper` for named_urls, helpers, etc."
 
 module RailsHelper
-  require 'database_cleaner'
   def self.included(base)
+    Gem.send('require', 'database_cleaner')
+    Gem.send('require', 'hirb')
+    
+    Hirb::View.enable
+    
     #TODO: is there better wat than #send?
-    Gem.send('require', 'arspy')
+    begin
+      Gem.send('require', 'arspy')
+    rescue LoadError
+      puts 'gem "arspy" is not installed'
+    end
     
     ##from: http://kpumuk.info/ruby-on-rails/memo-6-using-named-routes-and-url_for-outside-the-controller-in-ruby-on-rails/
     ## this is slow because all routes and resources being calculated now
