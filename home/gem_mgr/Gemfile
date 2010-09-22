@@ -9,17 +9,29 @@ gem 'cheat'
 gem 'diff-lcs'
 #gem 'git'
 gem 'github'
-gem 'hammertime'
 gem 'hitch'
 gem 'jeweler'
-gem 'method_lister'
-gem 'mongrel'
+#gem 'mongrel'
 gem 'rake'
 gem 'rdoc'
 gem 'rdoc-data'
-gem 'ruby-debug'
 gem 'sqlite3-ruby'
 gem 'thin'
 gem 'thor'
 gem 'watchr'
 gem 'yard'
+
+group :irb do
+  gem 'hirb'
+  gem 'method_lister'
+  gem 'wirble'
+end
+
+group '1.8' do
+  gem 'hammertime' #highline is not 1.9 compatible.  highline1.9 is.
+  gem 'ruby-debug'
+end
+
+group '1.9' do
+  gem 'ruby-debug19'
+end
