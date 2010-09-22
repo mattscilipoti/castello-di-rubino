@@ -15,7 +15,7 @@ module RailsHelper
     
     Hirb::View.enable
     
-    #TODO: is there better wat than #send?
+    #TODO: is there better way than #send?
     begin
       Gem.send('require', 'arspy')
     rescue LoadError
