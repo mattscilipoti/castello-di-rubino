@@ -40,4 +40,4 @@ function rvm_info {
 	[[ @${PWD##*/} == $(rvm_gemset) ]] && ~/.rvm/bin/rvm-prompt i v p || ~/.rvm/bin/rvm-prompt
 }
 
-PS1="\$(tput setaf 5)\$(rvm_info)\$(tput sgr 0) $PS1"
+PS1="\[\$(tput setaf 5)\]\$(rvm_info)\[\$(tput sgr 0)\] $PS1"
