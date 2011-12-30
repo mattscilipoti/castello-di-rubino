@@ -26,24 +26,4 @@ alias ..-='cd .. && cd -' #useful for triggering .rvmrc
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 ## Prompt:
-# PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
-
-# http://www.jtanium.com/2011/12/21/bash-prompt-for-rvm-and-git/
-ESC="\033" # This is the escape sequence
-NO_COLOR="$ESC[0m"
-IRED="$ESC[1;31m" # ANSI color code for intense/bold red
-IGRN="$ESC[1;32m" # ANSI color code for intense/bold green
-IGRAY="$ESC[1;30m" # ANSI color code for intense/dark gray
-
-# From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
-# I had to change 'git-symbolic-ref' to 'git symbolic-ref'
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
-}
-
-#PS1="\h:\W \u\$" # For reference, here's the default OS X prompt
-#export PS1="\$(rvm_version)\W \$(parse_git_branch)\$ " # Without the colors
-
-# I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
-export PS1="\[$IGRAY\]\$(~/.rvm/bin/rvm-prompt) \[$NO_COLOR\]\W\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\] \$ "
+PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
