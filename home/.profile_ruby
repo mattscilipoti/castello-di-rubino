@@ -26,4 +26,9 @@ alias ..-='cd .. && cd -' #useful for triggering .rvmrc
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 ## Prompt:
-PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+# tput +
+# sgr 0 = default color;
+# setaf = foreground; setab = background;
+# 0 = black; 1 = red; 2 = green; 3 = yellow; 4 = blue; 5 = purple; 6 = cyan; 7 = light gray;
+
+PS1="\$(tput setaf 5)\$(~/.rvm/bin/rvm-prompt)\$(tput sgr 0) $PS1"
