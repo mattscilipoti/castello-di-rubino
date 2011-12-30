@@ -31,4 +31,13 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 # setaf = foreground; setab = background;
 # 0 = black; 1 = red; 2 = green; 3 = yellow; 4 = blue; 5 = purple; 6 = cyan; 7 = light gray;
 
-PS1="\$(tput setaf 5)\$(~/.rvm/bin/rvm-prompt)\$(tput sgr 0) $PS1"
+function rvm_gemset {
+	~/.rvm/bin/rvm-prompt g
+}
+
+function rvm_info {
+	# only show gemset if it differs from current dir
+	[[ @${PWD##*/} == $(rvm_gemset) ]] && ~/.rvm/bin/rvm-prompt i v p || ~/.rvm/bin/rvm-prompt
+}
+
+PS1="\$(tput setaf 5)\$(rvm_info)\$(tput sgr 0) $PS1"
